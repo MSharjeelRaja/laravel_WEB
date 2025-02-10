@@ -14,6 +14,10 @@ Route::get('/datacell_home', function () {
     return view('datacell_Home');
 })->name('datacell.home');
 
+Route::get('/Upload', function () {
+    return view('Upload');
+})->name('Upload');
+
 
 Route::get('/forgot_password', function () {
     return view('forgot_password');
