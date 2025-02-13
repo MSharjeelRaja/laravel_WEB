@@ -22,3 +22,7 @@ Route::get('/Upload', function () {
 Route::get('/forgot_password', function () {
     return view('forgot_password');
 })->name('forgot');
+
+Route::get('/courses', function () {
+    return view('allcourses');
+})->name('courses');
