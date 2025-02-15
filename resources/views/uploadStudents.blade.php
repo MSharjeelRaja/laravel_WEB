@@ -8,7 +8,7 @@
     @vite('resources/css/app.css')
 
     <style>
-        /* Police lights animation */
+
         @keyframes policeLights {
             0% {
                 background-color: red;
@@ -32,7 +32,7 @@
             }
         }
 
-        /* Flashing text effect with blue and red neon glow */
+
         @keyframes flashText {
             0% {
                 text-shadow: 0 0 10px rgb(173, 166, 166), 0 0 20px red, 0 0 30px red;
@@ -49,7 +49,7 @@
         }
 
 
-        /* Styles for flashing lights in the corners */
+
         .animate-policeLights {
             animation: policeLights 3.5s infinite;
         }
@@ -59,7 +59,7 @@
             animation: flashText 6.5s infinite alternate;
         }
 
-        /* Flashing neon effect for text */
+
         .flashing-text {
             font-size: 4rem;
             font-weight: bold;
@@ -72,13 +72,12 @@
 </head>
 <body class="bg-black overflow-hidden">
 
-    <!-- Police Lights (Corners) with Blur and Glow Effect -->
+
     <div class="absolute top-0 left-0 w-20 h-20 bg-red-500 animate-policeLights rounded-tl-xl blur-sm"></div>
     <div class="absolute top-0 right-0 w-20 h-20 bg-red-500 animate-policeLights rounded-tr-xl blur-sm"></div>
     <div class="absolute bottom-0 left-0 w-20 h-20 bg-red-500 animate-policeLights rounded-bl-xl blur-sm"></div>
     <div class="absolute bottom-0 right-0 w-20 h-20 bg-red-500 animate-policeLights rounded-br-xl blur-sm"></div>
 
-    <!-- Flashing Moving Text in the Center -->
     <h1 class="flashing-text absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 text-center">
         Yeh Bna Rha Hu abhi baki Set kro
     </h1>

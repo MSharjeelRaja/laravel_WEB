@@ -21,7 +21,7 @@
         <div class="flex flex-col">
             <span class="text-gray-600 font-semibold">{{ $username }}</span>
 
-            <!-- Conditional rendering based on variable 'a' -->
+
             @if ($a === 'dc')
                 <span class="text-sm text-gray-400">DataCell Officer</span>
             @elseif ($a === 'ad')
