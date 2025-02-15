@@ -10,6 +10,10 @@ Route::get('/Admin', function () {
 })->name('Admin.home');
 
 
+Route::get('/uploadStudents', function () {
+    return view('uploadStudents');
+})->name('uploadStudents');
+
 Route::get('/datacell_home', function () {
     return view('datacell_Home');
 })->name('datacell.home');
@@ -26,3 +30,4 @@ Route::get('/forgot_password', function () {
 Route::get('/courses', function () {
     return view('allcourses');
 })->name('courses');
+

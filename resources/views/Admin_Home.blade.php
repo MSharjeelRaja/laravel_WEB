@@ -56,11 +56,11 @@
         .nav-item:hover::after {
             width: 100%;
             left: 0;
-        }
+  }
     </style>
 </head>
 <body class="bg-gradient-to-r from-blue-300 via-blue-200 to-blue-100 min-h-screen p-0 m-0">
-    @include('components.navbar', ['username' => 'Sharjeel', 'profileImage' => 'images/2021-ARID-4583.png'])
+    @include('components.navbar', ['username' => ' M Sharjeel', 'profileImage' => 'images/2021-ARID-4583.png', 'a'=>'ad'])
 
 
 
@@ -86,76 +86,50 @@
                 <span>📢 New Student Portal Launched!</span>
                 <span>📝 Exam Forms Submission Ends Soon</span>
             </div>
-        </div>
-    </div>
-    <div class="max-w-7xl mx-auto mt-6 bg-white p-6 rounded-2xl shadow-lg text-center border border-gray-200">
-        <h3 class="text-xl font-bold text-gray-800">🎓 Session: <span class="text-blue-600">FALL-2025</span></h3>
-        <div class="grid md:grid-cols-2  gap-6 mt-6">
-            <div class="p-6  bg-gray-100 rounded-xl shadow-md text-center">
-                <p class="text-gray-600 font-semibold">Start Date</p>
-                <p class="text-1xl  md:text-3xl font-bold text-blue-700 mt-1">📅 24 Feb 2025</p>
+        </div> </div> </div>
+        <div class="max-w-5xl mx-auto mt-6 flex items-center">
+           <button id="prevBtn" class="bg-white p-3 md:p-4 rounded-lg shadow-md text-center btn-hover mr-2 md:mr-5">⬅️</button>
+            <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-3 md:gap-4 flex-1" id="cardContainer">
+                <!-- Button 1 -->
+                <a href="{{ route('Upload') }}" class="btn-card bg-white p-6 rounded-xl shadow-md text-center hover:scale-105 transition-transform">
+                    <span class="text-4xl">📑</span>
+                    <p class="mt-2 font-bold text-xs md:text-sm">Upload Timetable</p>
+                </a>
+                <!-- Button 2 -->
+                <a href="{{ route('uploadStudents') }}" class="btn-card bg-white p-6 rounded-xl shadow-md text-center hover:scale-105 transition-transform">
+                    <span class="text-4xl">👨‍🎓</span>
+                    <p class="mt-2 font-bold text-xs md:text-sm">Add Students</p>
+                </a>
+                <!-- Button 3 -->
+                <a href="{{ route('courses') }}" class="btn-card bg-white p-6 rounded-xl shadow-md text-center hover:scale-105 transition-transform">
+                    <span class="text-4xl">📚</span>
+                    <p class="mt-2 font-bold text-xs md:text-sm">All Courses</p>
+                </a>
+                <!-- Button 4 -->
+                <a href="{{ route('courses') }}" class="btn-card bg-white p-6 rounded-xl shadow-md text-center hover:scale-105 transition-transform">
+                    <span class="text-4xl">🎓</span>
+                    <p class="mt-2 font-bold text-xs md:text-sm">Assign Courses</p>
+                </a>
+
+                <!-- Button 5 -->
+                <a href="{{ route('courses') }}" class="btn-card bg-white p-6 rounded-xl shadow-md text-center hover:scale-105 transition-transform">
+                    <span class="text-4xl">👨‍🏫</span>
+                    <p class="mt-2 font-bold text-xs md:text-sm">Teachers</p>
+                </a>
+                <!-- Button 6 -->
+                <a href="{{ route('courses') }}" class="btn-card bg-white p-6 rounded-xl shadow-md text-center hover:scale-105 transition-transform">
+                    <span class="text-4xl">👨‍🎓</span>
+                    <p class="mt-2 font-bold text-xs md:text-sm">Students</p>
+                </a>
+
+
+
             </div>
-            <div class="p-6  bg-gray-100 rounded-xl shadow-md text-center">
-                <p class="text-gray-600 font-semibold">End Date</p>
-                <p class="text-1xl  md:text-3xl font-bold text-red-600 mt-1">📅 31 June 2025</p>
-            </div>
-        </div>
-    </div>
-
-    <div class="max-w-5xl mx-auto mt-6 flex items-center">
-        <button id="prevBtn" class="bg-white p-3 md:p-4 rounded-lg shadow-md text-center btn-hover mr-2 md:mr-5">⬅️</button>
-
-        <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-3 md:gap-4 flex-1" id="cardContainer">
-            <button class="bg-white p-4 md:p-6 rounded-lg shadow-md text-center btn-hover w-full">
-                <span class="text-3xl md:text-4xl">🎓</span>
-                <p class="mt-2 font-bold text-xs md:text-sm break-words">Enrolled Courses</p>
-            </button>
-            <button class="bg-white p-4 md:p-6 rounded-lg shadow-md text-center btn-hover w-full">
-                <span class="text-3xl md:text-4xl">📚</span>
-                <p class="mt-2 font-bold text-xs md:text-sm break-words">Assigned Courses</p>
-            </button>
-            <button class="bg-white p-4 md:p-6 rounded-lg shadow-md text-center btn-hover w-full">
-                <span class="text-3xl md:text-4xl">👨‍🎓</span>
-                <p class="mt-2 font-bold text-xs md:text-sm break-words">Students</p>
-            </button>
-            <button class="bg-white p-4 md:p-6 rounded-lg shadow-md text-center btn-hover w-full">
-                <span class="text-3xl md:text-4xl">👨‍🏫</span>
-                <p class="mt-2 font-bold text-xs md:text-sm break-words">Teachers</p>
-            </button>
-            <button class="bg-white p-4 md:p-6 rounded-lg shadow-md text-center btn-hover hidden w-full">
-                <span class="text-3xl md:text-4xl">📜</span>
-                <p class="mt-2 font-bold text-xs md:text-sm break-words">Exams</p>
-            </button>
-            <button class="bg-white p-4 md:p-6 rounded-lg shadow-md text-center btn-hover hidden w-full">
-                <span class="text-3xl md:text-4xl">🗂️</span>
-                <p class="mt-2 font-bold text-xs md:text-sm break-words">Results</p>
-            </button>
-            <button class="bg-white p-4 md:p-6 rounded-lg shadow-md text-center btn-hover hidden w-full">
-                <span class="text-3xl md:text-4xl">📑</span>
-                <p class="mt-2 font-bold text-xs md:text-sm break-words">Assignments</p>
-            </button>
-            <button class="bg-white p-4 md:p-6 rounded-lg shadow-md text-center btn-hover hidden w-full">
-                <span class="text-3xl md:text-4xl">🔔</span>
-                <p class="mt-2 font-bold text-xs md:text-sm break-words">Notifications</p>
-            </button>
-            <button class="bg-white p-4 md:p-6 rounded-lg shadow-md text-center btn-hover hidden w-full">
-                <span class="text-3xl md:text-4xl">⚙️</span>
-                <p class="mt-2 font-bold text-xs md:text-sm break-words">Settings</p>
-            </button>
-            <button class="bg-white p-4 md:p-6 rounded-lg shadow-md text-center btn-hover hidden w-full">
-                <span class="text-3xl md:text-4xl">💬</span>
-                <p class="mt-2 font-bold text-xs md:text-sm break-words">Messages</p>
-            </button>
-        </div>
-
-        <button id="nextBtn" class="bg-white p-3 md:p-4 rounded-lg shadow-md text-center btn-hover ml-2 md:ml-5">
-            <span>➡️</span>
-        </button>
-    </div>
-
-    <div class="max-w-6xl mx-auto mt-6 bg-white p-6 rounded-lg shadow-lg">
-        <h3 class="text-lg font-bold">Offered Courses</h3>
-        <div class="grid grid-cols-2 gap-4 mt-4">
+<!-- Next Button: Positioned to the right outside the card with margin -->
+<button id="nextBtn" class="bg-white p-3 md:p-4 rounded-lg shadow-md text-center btn-hover ml-2 md:ml-5">
+    <span>➡️</span>
+</button></div>
+        <div class=" max-w-6xl mx-auto grid grid-cols-2 gap-4 mt-4">
             <button class="btn-hover bg-blue-600 text-white p-6 rounded-lg text-center">
                 <p class="font-bold">Offered Courses</p>
                 <p class="text-3xl font-bold">33</p>
@@ -202,7 +176,7 @@
 </body>
 <script>
     let currentIndex = 0;
-    const buttons = document.querySelectorAll("#cardContainer button");
+    const buttons = document.querySelectorAll(".btn-card");
     const visibleCount = 4;
 
     function updateVisibility() {

@@ -5,9 +5,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>LMS Dashboard</title>
     @vite('resources/css/app.css')
-
+    <script>
+        function toggleMenu() {
+            document.getElementById("mobileMenu").classList.toggle("hidden");
+        }
+    </script>
     <style>
-          @keyframes marquee {
+        @keyframes marquee {
             from { transform: translateX(0); }
             to { transform: translateX(-100%); }
         }
@@ -36,11 +40,9 @@
             font-weight: 600;
             transition: color 0.3s ease-in-out;
         }
-
         .nav-item:hover {
             color: #1d4ed8;
         }
-
         .nav-item::after {
             content: "";
             position: absolute;
@@ -51,37 +53,21 @@
             background-color: #1d4ed8;
             transition: width 0.3s ease-in-out, left 0.3s ease-in-out;
         }
-
         .nav-item:hover::after {
             width: 100%;
             left: 0;
-        }
+  }
     </style>
 </head>
 <body class="bg-gradient-to-r from-blue-300 via-blue-200 to-blue-100 min-h-screen p-0 m-0">
+    @include('components.navbar', ['username' => ' M Sharjeel', 'profileImage' => 'images/2021-ARID-4583.png', 'a'=>'dc'])
 
 
-    <div class="flex justify-between items-center bg-white p-4 shadow-md">
-        <div class="text-5xl ml-6 font-bold text-blue-600">LMS</div>
-        <div class="flex items-center space-x-4">
-            <a href="#" class="text-gray-600 font-semibold nav-item">Home</a>
-            <a href="#" class="text-gray-600 font-semibold nav-item">Courses</a>
-            <a href="#" class="text-gray-600 font-semibold nav-item">Tecahers</a>
-            <a href="#" class="text-gray-600 font-semibold nav-item">Enrollments</a>
-            <div class="flex items-center space-x-3">
-                <img src="{{ asset('images/2021-ARID-4583.png') }}" alt="Profile Picture" class="w-11 h-10 rounded-full border border-gray-300">
-                <div class="flex flex-col">
-                    <span class="text-gray-600 font-semibold">Sharjeel</span>
-                    <span class="text-sm text-gray-400">DataCell Officer</span>
-                </div>
-            </div>
 
-        </div>
-    </div>
-    <div class="max-w-6xl mx-auto mb-4 mt-6 p-6 rounded-2xl shadow-lg text-center fade-in backdrop-blur-lg border border-white/10" style="background: linear-gradient(to bottom right, rgba(0, 198, 255, 0.8), rgba(0, 114, 255, 0.8), rgba(30, 61, 143, 0.8));">
+    <div class="max-w-6xl mx-auto mb-1 mt-6 p-6 rounded-2xl shadow-lg text-center fade-in backdrop-blur-lg border border-white/10" style="background: linear-gradient(to bottom right, rgba(0, 198, 255, 0.8), rgba(0, 114, 255, 0.8), rgba(30, 61, 143, 0.8));">
         <img src="{{ asset('images/2021-ARID-4583.png') }}" alt="Profile Picture" class="mx-auto rounded-full border-4 border-white shadow-lg w-24 h-24 object-cover">
-        <h2 class="text-white text-2xl font-bold mt-3">Muhammad Usman</h2>
-        <p class="text-white opacity-80">DataCell officer</p>
+        <h2 class="text-white text-2xl font-bold mt-3">Muhammad Sharjeel</h2>
+        <p class="text-white opacity-80">DataCell</p>
         <button class="account-btn text-white px-6 py-3 mt-4 rounded-full bg-white/20 hover:bg-white/30 transition-all duration-300 shadow-lg">Account Details</button>
     </div>
     <div class="relative w-full max-w-8xl overflow-hidden bg-gradient-to-r from-blue-600 to-indigo-800 text-white shadow-lg rounded-lg border border-white/10 mx-auto py-4">
@@ -100,73 +86,50 @@
                 <span>📢 New Student Portal Launched!</span>
                 <span>📝 Exam Forms Submission Ends Soon</span>
             </div>
-        </div>
-    </div>
-    <div class="max-w-5xl mx-auto mt-6 bg-white p-6 rounded-2xl shadow-lg text-center border border-gray-200">
-        <h3 class="text-xl font-bold text-gray-800">🎓 Session: <span class="text-blue-600">FALL-2025</span></h3>
-        <div class="grid grid-cols-2 gap-6 mt-6">
-            <div class="p-6 bg-gray-100 rounded-xl shadow-md text-center">
-                <p class="text-gray-600 font-semibold">Start Date</p>
-                <p class="text-2xl font-bold text-blue-700 mt-1">📅 24 Feb 2025</p>
-            </div>
-            <div class="p-6 bg-gray-100 rounded-xl shadow-md text-center">
-                <p class="text-gray-600 font-semibold">End Date</p>
-                <p class="text-2xl font-bold text-red-600 mt-1">📅 31 June 2025</p>
-            </div>
-        </div>
-    </div>
+        </div> </div> </div>
+        <div class="max-w-5xl mx-auto mt-6 flex items-center">
+           <button id="prevBtn" class="bg-white p-3 md:p-4 rounded-lg shadow-md text-center btn-hover mr-2 md:mr-5">⬅️</button>
+            <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-3 md:gap-4 flex-1" id="cardContainer">
+                <!-- Button 1 -->
+                <a href="{{ route('Upload') }}" class="btn-card bg-white p-6 rounded-xl shadow-md text-center hover:scale-105 transition-transform">
+                    <span class="text-4xl">📑</span>
+                    <p class="mt-2 font-bold text-xs md:text-sm">Upload Timetable</p>
+                </a>
+                <!-- Button 2 -->
+                <a href="{{ route('uploadStudents') }}" class="btn-card bg-white p-6 rounded-xl shadow-md text-center hover:scale-105 transition-transform">
+                    <span class="text-4xl">👨‍🎓</span>
+                    <p class="mt-2 font-bold text-xs md:text-sm">Add Students</p>
+                </a>
+                <!-- Button 3 -->
+                <a href="{{ route('courses') }}" class="btn-card bg-white p-6 rounded-xl shadow-md text-center hover:scale-105 transition-transform">
+                    <span class="text-4xl">📚</span>
+                    <p class="mt-2 font-bold text-xs md:text-sm">All Courses</p>
+                </a>
+                <!-- Button 4 -->
+                <a href="{{ route('courses') }}" class="btn-card bg-white p-6 rounded-xl shadow-md text-center hover:scale-105 transition-transform">
+                    <span class="text-4xl">🎓</span>
+                    <p class="mt-2 font-bold text-xs md:text-sm">Assign Courses</p>
+                </a>
 
-    <div class="max-w-6xl mx-auto mt-6 flex items-center">
-        <button id="prevBtn" class="bg-white p-4 rounded-lg shadow-md text-center btn-hover mr-5">⬅️</button>
-        <div class="grid grid-cols-2 md:grid-cols-4 gap-4 flex-1" id="cardContainer">
-            <button class="bg-white p-6 rounded-lg shadow-md text-center btn-hover">
-                <span class="text-4xl">🎓</span>
-                <p class="mt-2 font-bold">Enrolled Courses</p>
-            </button>
-            <button class="bg-white p-6 rounded-lg shadow-md text-center btn-hover">
-                <span class="text-4xl">📚</span>
-                <p class="mt-2 font-bold">Assigned Courses</p>
-            </button>
-            <button class="bg-white p-6 rounded-lg shadow-md text-center btn-hover">
-                <span class="text-4xl">👨‍🎓</span>
-                <p class="mt-2 font-bold">Students</p>
-            </button>
-            <button class="bg-white p-6 rounded-lg shadow-md text-center btn-hover">
-                <span class="text-4xl">👨‍🏫</span>
-                <p class="mt-2 font-bold">Teachers</p>
-            </button>
-            <button class="bg-white p-6 rounded-lg shadow-md text-center btn-hover hidden">
-                <span class="text-4xl">📜</span>
-                <p class="mt-2 font-bold">Exams</p>
-            </button>
-            <button class="bg-white p-6 rounded-lg shadow-md text-center btn-hover hidden">
-                <span class="text-4xl">🗂️</span>
-                <p class="mt-2 font-bold">Results</p>
-            </button>
-            <button class="bg-white p-6 rounded-lg shadow-md text-center btn-hover hidden">
-                <span class="text-4xl">📑</span>
-                <p class="mt-2 font-bold">Assignments</p>
-            </button>
-            <button class="bg-white p-6 rounded-lg shadow-md text-center btn-hover hidden">
-                <span class="text-4xl">🔔</span>
-                <p class="mt-2 font-bold">Notifications</p>
-            </button>
-            <button class="bg-white p-6 rounded-lg shadow-md text-center btn-hover hidden">
-                <span class="text-4xl">⚙️</span>
-                <p class="mt-2 font-bold">Settings</p>
-            </button>
-            <button class="bg-white p-6 rounded-lg shadow-md text-center btn-hover hidden">
-                <span class="text-4xl">💬</span>
-                <p class="mt-2 font-bold">Messages</p>
-            </button>
-        </div>
-        <button id="nextBtn" class="bg-white p-4 rounded-lg shadow-md text-center btn-hover ml-5">
-            <span>➡️</span>
-        </button>
-    </div>
-    <div class="max-w-6xl mx-auto mt-6 bg-white p-6 rounded-lg shadow-lg">
-        <h3 class="text-lg font-bold">Offered Courses</h3>
-        <div class="grid grid-cols-2 gap-4 mt-4">
+                <!-- Button 5 -->
+                <a href="{{ route('courses') }}" class="btn-card bg-white p-6 rounded-xl shadow-md text-center hover:scale-105 transition-transform">
+                    <span class="text-4xl">👨‍🏫</span>
+                    <p class="mt-2 font-bold text-xs md:text-sm">Teachers</p>
+                </a>
+                <!-- Button 6 -->
+                <a href="{{ route('courses') }}" class="btn-card bg-white p-6 rounded-xl shadow-md text-center hover:scale-105 transition-transform">
+                    <span class="text-4xl">👨‍🎓</span>
+                    <p class="mt-2 font-bold text-xs md:text-sm">Students</p>
+                </a>
+
+
+
+            </div>
+<!-- Next Button: Positioned to the right outside the card with margin -->
+<button id="nextBtn" class="bg-white p-3 md:p-4 rounded-lg shadow-md text-center btn-hover ml-2 md:ml-5">
+    <span>➡️</span>
+</button></div>
+        <div class=" max-w-6xl mx-auto grid grid-cols-2 gap-4 mt-4">
             <button class="btn-hover bg-blue-600 text-white p-6 rounded-lg text-center">
                 <p class="font-bold">Offered Courses</p>
                 <p class="text-3xl font-bold">33</p>
@@ -213,7 +176,7 @@
 </body>
 <script>
     let currentIndex = 0;
-    const buttons = document.querySelectorAll("#cardContainer button");
+    const buttons = document.querySelectorAll(".btn-card");
     const visibleCount = 4;
 
     function updateVisibility() {

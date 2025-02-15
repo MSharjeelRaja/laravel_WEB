@@ -37,7 +37,7 @@
 </head>
 <body class="bg-gray-100">
 
-    @include('components.navbar', ['username' => 'Sharjeel', 'profileImage' => 'images/2021-ARID-4583.png'])
+    @include('components.navbar', ['username' => 'Sharjeel', 'profileImage' => 'images/2021-ARID-4583.png','a'=>'dp'])
 
     <!-- Course List -->
     <div class="container mx-auto px-4 py-6">
