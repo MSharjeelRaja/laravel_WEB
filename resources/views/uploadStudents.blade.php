@@ -79,7 +79,7 @@
     <div class="absolute bottom-0 right-0 w-20 h-20 bg-red-500 animate-policeLights rounded-br-xl blur-sm"></div>
 
     <h1 class="flashing-text absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 text-center">
-        Yeh Bna Rha Hu abhi baki Set kro
+        Yeh Bna Rha Hu  baki Set kro
     </h1>
 
 </body>
