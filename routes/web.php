@@ -8,6 +8,9 @@ Route::get('/login', function () {
 Route::get('/Admin', function () {
     return view('Admin_Home');
 })->name('Admin.home');
+Route::get('/sameertest', function () {
+    return view('sameertest');
+})->name('sameertest');
 
 
 Route::get('/uploadStudents', function () {
