@@ -106,24 +106,10 @@
         });
     </script>
 </head>
-<body class="min-h-screen bg-blue-200">
-    <div class="flex justify-between items-center bg-white p-4 shadow-md">
-        <div class="text-5xl ml-6 font-bold text-blue-600">LMS</div>
-        <div class="flex items-center space-x-4">
-            <a href="#" class="text-gray-600 font-semibold nav-item">Home</a>
-            <a href="#" class="text-gray-600 font-semibold nav-item">Courses</a>
-            <a href="#" class="text-gray-600 font-semibold nav-item">Teachers</a>
-            <a href="#" class="text-gray-600 font-semibold nav-item">Enrollments</a>
-            <div class="flex items-center space-x-3">
-                <img src="{{ asset('images/2021-ARID-4583.png') }}" alt="Profile Picture" class="w-11 h-10 rounded-full border border-gray-300">
-                <div class="flex flex-col">
-                    <span class="text-gray-600 font-semibold">Sharjeel</span>
-                    <span class="text-sm text-gray-400">DataCell Officer</span>
-                </div>
-            </div>
 
-        </div>
-    </div>
+        <body class="bg-gradient-to-r from-blue-300 via-blue-200 to-blue-100 min-h-screen p-0 m-0">
+            @include('components.navbar', ['username' => ' M Sharjeel', 'profileImage' => 'images/2021-ARID-4583.png', 'a'=>'ad'])
+
 
     <div class="max-w-4xl mx-auto bg-white shadow-md rounded-lg p-6 mt-6 text-center">
         <h2 class="text-2xl font-bold text-gray-700 mb-4">Upload Timetable</h2>
